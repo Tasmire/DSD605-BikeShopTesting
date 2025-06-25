@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-DSD603_BikeShopDB-812ac46c-e726-4e6b-9156-1ece1f913861</UserSecretsId>
+    <RootNamespace>DSD603_BikeShopDB</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\styles.css" />
+    <None Include="wwwroot\favicon.ico" />
+    <None Include="wwwroot\js\build-assets.js" />
+    <None Include="wwwroot\js\build-pug.js" />
+    <None Include="wwwroot\js\build-scripts.js" />
+    <None Include="wwwroot\js\build-scss.js" />
+    <None Include="wwwroot\js\clean.js" />
+    <None Include="wwwroot\js\render-assets.js" />
+    <None Include="wwwroot\js\render-pug.js" />
+    <None Include="wwwroot\js\render-scripts.js" />
+    <None Include="wwwroot\js\render-scss.js" />
+    <None Include="wwwroot\js\sb-watch.js" />
+    <None Include="wwwroot\js\scripts.js" />
+    <None Include="wwwroot\js\start-debug.js" />
+    <None Include="wwwroot\js\start.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="9.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
+  </ItemGroup>
+
+</Project>

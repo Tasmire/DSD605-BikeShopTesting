@@ -1,0 +1,2 @@
+﻿On the homepage of this program, there is a navigation bar at the top of the page and individual links to each table page below the main banner. If you follow any of the links, you can view the lists of the customers, stock items, orders and staff that have been entered into the database. On these pages, you can also create, edit, delete and view entries.
+There is a short video included in this project folder showcasing the functionality of the program.
