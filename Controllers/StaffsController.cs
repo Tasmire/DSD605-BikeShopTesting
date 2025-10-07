@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DSD603_BikeShopDB.Data;
 using DSD603_Bike_Shop.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DSD603_BikeShopDB.Controllers
 {
+    [Authorize(Policy = "RequireAdminRole")]
     public class StaffsController : Controller
     {
         private readonly ApplicationDbContext _context;

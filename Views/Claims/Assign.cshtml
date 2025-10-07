@@ -1,0 +1,46 @@
+﻿@model DSD603_BikeShopDB.Models.ClaimsAssignViewModel
+@{
+    ViewData["Title"] = "Assign Claim";
+}
+
+<div class="container mt-4">
+    <h2><i class="bi bi-person-plus"></i> Assign Claim to User</h2>
+    <hr />
+    @if (!string.IsNullOrEmpty(Model.StatusMessage))
+    {
+        var alertClass = Model.StatusMessage.StartsWith("Success") ? "alert-success" : "alert-danger";
+        <div class="alert @alertClass alert-dismissible fade show" role="alert">
+            @Model.StatusMessage
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    <form asp-action="Assign" method="post">
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+        <div class="mb-3">
+            <label asp-for="SelectedUserName" class="form-label"></label>
+            <select asp-for="SelectedUserName" asp-items="Model.Users" class="form-select">
+                <option value="">-- Select a user --</option>
+            </select>
+            <span asp-validation-for="SelectedUserName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ClaimType" class="form-label"></label>
+            <input asp-for="ClaimType" class="form-control" placeholder="e.g., Department, Permission" />
+            <span asp-validation-for="ClaimType" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ClaimValue" class="form-label"></label>
+            <input asp-for="ClaimValue" class="form-control" placeholder="e.g., HR, CanEdit" />
+            <span asp-validation-for="ClaimValue" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-check-circle"></i> Assign Claim
+        </button>
+        <a asp-action="Index" class="btn btn-secondary ms-2">
+            <i class="bi bi-arrow-left"></i> Back to Claims
+        </a>
+    </form>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

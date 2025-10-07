@@ -1,9 +1,11 @@
 using System.Diagnostics;
 using DSD603_BikeShopDB.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DSD603_BikeShopDB.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

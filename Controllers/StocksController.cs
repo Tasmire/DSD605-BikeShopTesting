@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DSD603_BikeShopDB.Data;
 using DSD603_Bike_Shop.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DSD603_BikeShopDB.Controllers
 {
+    [Authorize]
     public class StocksController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -44,6 +46,7 @@ namespace DSD603_BikeShopDB.Controllers
         }
 
         // GET: Stocks/Create
+        [Authorize(Policy = "Over18")]
         public IActionResult Create()
         {
             return View();
@@ -54,6 +57,7 @@ namespace DSD603_BikeShopDB.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "Over18")]
         public async Task<IActionResult> Create([Bind("StockId,ProductName,ProductDescription,ProductType,Price,Quantity")] Stock stock)
         {
             if (ModelState.IsValid)
@@ -67,6 +71,7 @@ namespace DSD603_BikeShopDB.Controllers
         }
 
         // GET: Stocks/Edit/5
+        [Authorize(Policy = "CanEditStock")]
         public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
@@ -87,6 +92,7 @@ namespace DSD603_BikeShopDB.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "CanEditStock")]
         public async Task<IActionResult> Edit(Guid id, [Bind("StockId,ProductName,ProductDescription,ProductType,Price,Quantity")] Stock stock)
         {
             if (id != stock.StockId)
@@ -118,6 +124,7 @@ namespace DSD603_BikeShopDB.Controllers
         }
 
         // GET: Stocks/Delete/5
+        [Authorize(Policy = "CanDeleteStock")]
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
@@ -138,6 +145,7 @@ namespace DSD603_BikeShopDB.Controllers
         // POST: Stocks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "CanDeleteStock")]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             var stock = await _context.Stock.FindAsync(id);

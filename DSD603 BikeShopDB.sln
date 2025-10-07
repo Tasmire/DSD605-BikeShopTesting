@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.36105.23 d17.13
+VisualStudioVersion = 17.13.36105.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSD603 BikeShopDB", "DSD603 BikeShopDB.csproj", "{CA148BB6-7BEC-449F-990F-0ABFCF37F440}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIIntegrationTest", "..\APIIntegrationTest\APIIntegrationTest.csproj", "{DD841E61-4FAB-48FF-BAD6-1066E521006A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{CA148BB6-7BEC-449F-990F-0ABFCF37F440}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA148BB6-7BEC-449F-990F-0ABFCF37F440}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA148BB6-7BEC-449F-990F-0ABFCF37F440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD841E61-4FAB-48FF-BAD6-1066E521006A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD841E61-4FAB-48FF-BAD6-1066E521006A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD841E61-4FAB-48FF-BAD6-1066E521006A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD841E61-4FAB-48FF-BAD6-1066E521006A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
